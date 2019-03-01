@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: helloworld-dep
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+      - name: web
+        image: adityaprabhakara/trial
+        ports:
+        - name: nginxport
+          containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: blog-ghost-svc
+spec:
+  ports:
+  - port: 9999
+    nodePort: 32007
+    targetPort: nginxport
+    protocol: TCP
+  selector:
+    app: helloworld
+  type: NodePort
