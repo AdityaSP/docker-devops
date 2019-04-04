@@ -1,7 +1,7 @@
 #FROM alpine:3.8
 #ENV APACHE_PORT 80
 #RUN apk update && apk add apache2 && mkdir /run/apache2
-FROM adityaprabhakara/alap:4
+FROM adityaprabhakara/alpine-apache
 COPY mypage.html /var/www/localhost/htdocs
 
 #COPY docker-entrypoint.sh /bin
