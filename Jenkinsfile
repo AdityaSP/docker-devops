@@ -26,6 +26,9 @@ pipeline {
     stage('kubernetes runs') {
       steps{
         sh 'sed -i "s/BUILDNUMBER/$BUILD_NUMBER/" dep.yml'   
+                sh 'sed -i "s/REGISTRY/' + registry + '/" dep.yml'
+        
+
         sh 'kubectl apply -f dep.yml || echo "nothing to create"' 
       }
     }
