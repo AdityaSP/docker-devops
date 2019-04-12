@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: REGISTRY:BUILDNUMBER
+        image: DOCKERUSERNAME/trial:BUILDNUMBER
         ports:
         - name: nginxport
           containerPort: 80
