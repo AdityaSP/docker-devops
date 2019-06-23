@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: helloworld-dep
+  name: app-dep
 spec:
   replicas: 3
   template:
@@ -20,7 +20,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: blog-ghost-svc
+  name: app-dep-svc
 spec:
   ports:
   - port: 9999
