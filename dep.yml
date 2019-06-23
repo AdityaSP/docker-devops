@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: DOCKERUSERNAME/trial:BUILDNUMBER
+        image: DOCKERUSERNAME/appjun23:BUILDNUMBER
         imagePullPolicy: Always
         ports:
         - name: nginxport
