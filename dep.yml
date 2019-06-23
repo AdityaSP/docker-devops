@@ -12,6 +12,7 @@ spec:
       containers:
       - name: web
         image: DOCKERUSERNAME/trial:BUILDNUMBER
+        imagePullPolicy: Always
         ports:
         - name: nginxport
           containerPort: 80
