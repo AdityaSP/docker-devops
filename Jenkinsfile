@@ -2,6 +2,8 @@ pipeline {
   environment {
     registry = "adityaprabhakara/appjun28"
     registryCredential = 'dockerhubcred'
+    dockerusername = 'adityaprabhakara'
+    imagename = "appjun28"
   }
   agent any
   stages {
@@ -27,7 +29,8 @@ pipeline {
     stage('kubernetes runs') {
       steps{
         sh 'sed -i "s/BUILDNUMBER/$BUILD_NUMBER/" dep.yml'   
-                sh 'sed -i "s/REGISTRYNAME/' + registry + '/" dep.yml'
+        sh 'sed -i "s/DOCKERUSER/' + dockerusername + '/" dep.yml'
+        sh 'sed -i "s/IMAGENAME/' + imagename +'/" dep.yml'
         
 
         sh 'kubectl apply -f dep.yml || echo "nothing to create"' 
