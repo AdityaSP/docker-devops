@@ -1,8 +1,7 @@
 pipeline {
   environment {
-    registry = "adityaprabhakara/trial"
+    registry = "adityaprabhakara/appjun28"
     registryCredential = 'dockerhubcred'
-    dockeruser= "adityaprabhakara"
   }
   agent any
   stages {
@@ -11,6 +10,7 @@ pipeline {
         git url: 'https://github.com/AdityaSP/docker-devops'  
         script {
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
+          
       }
         }
       }
@@ -27,7 +27,7 @@ pipeline {
     stage('kubernetes runs') {
       steps{
         sh 'sed -i "s/BUILDNUMBER/$BUILD_NUMBER/" dep.yml'   
-                sh 'sed -i "s/DOCKERUSERNAME/' + dockeruser + '/" dep.yml'
+                sh 'sed -i "s/REGISTRYNAME/' + registry + '/" dep.yml'
         
 
         sh 'kubectl apply -f dep.yml || echo "nothing to create"' 
