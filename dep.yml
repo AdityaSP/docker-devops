@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: REGISTRYNAME:BUILDNUMBER
+        image: DOCKERUSER/IMAGENAME:BUILDNUMBER
         imagePullPolicy: Always
         ports:
         - name: nginxport
