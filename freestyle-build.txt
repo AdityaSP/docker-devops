@@ -1,0 +1,5 @@
+docker build -t adityaprabhakara/appjun28:$BUILD_NUMBER .
+docker login -u adityaprabhakara -p <password>
+docker image push adityaprabhakara/appjun28:$BUILD_NUMBER
+sed -i "s/BUILDNUMBER/$BUILD_NUMBER/" dep.yml && sed -i "s/DOCKERUSER/adityaprabhakara/" dep.yml && sed -i "s/IMAGENAME/appjun28/" dep.yml
+kubectl apply -f dep.yml
