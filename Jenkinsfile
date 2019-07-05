@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "adityaprabhakara/appjun28"
+    registry = "adityaprabhakara/appjul5"
     registryCredential = 'dockerhubcred'
     dockerusername = 'adityaprabhakara'
     imagename = "appjun28"
