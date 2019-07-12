@@ -1,9 +1,9 @@
 pipeline {
   environment {
-    registry = "adityaprabhakara/appjul5"
+    registry = "adityaprabhakara/appjul12"
     registryCredential = 'dockerhubcred'
     dockerusername = 'adityaprabhakara'
-    imagename = "appjun28"
+    imagename = "appjul12"
   }
   agent any
   stages {
