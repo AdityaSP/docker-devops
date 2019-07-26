@@ -7,7 +7,7 @@ spec:
   template:
     metadata:
       labels:
-        app: helloworld
+        app: cicd
     spec:
       containers:
       - name: web
@@ -28,5 +28,5 @@ spec:
     targetPort: nginxport
     protocol: TCP
   selector:
-    app: helloworld
+    app: cicd
   type: NodePort
